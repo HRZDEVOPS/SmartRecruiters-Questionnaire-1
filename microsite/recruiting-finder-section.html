@@ -1,0 +1,97 @@
+  <!-- SmartRecruiters Recruiting Priorities Finder. Logic and copy: js/recruiting-finder.js -->
+  <section class="finder" id="recruiting-finder" aria-labelledby="sr-intro-title">
+    <div id="sr-recruiting-finder" class="wrap">
+      <div class="sr-container">
+
+        <div class="sr-intro" id="sr-intro">
+          <div class="sr-eyebrow">SmartRecruiters Recruiting Priorities Finder</div>
+          <h2 id="sr-intro-title" tabindex="-1">What Should Your Recruiting Technology Deliver?</h2>
+          <p class="sr-intro-lead">Where should your SmartRecruiters journey begin?</p>
+          <p>Answer three quick questions and we&rsquo;ll instantly show you the SmartRecruiters capabilities that match your recruiting priorities, and how they compare with SAP&reg; SuccessFactors&reg; Recruiting today.</p>
+          <button type="button" class="sr-primary-btn" data-sr-start data-cta-name="finder-start">Find My Recruiting Priorities &rarr;</button>
+        </div>
+
+        <div class="sr-progress-wrapper" id="sr-progress-wrapper" hidden>
+          <div class="sr-progress-text"><span id="sr-progress-label" aria-live="polite">Question 1 of 3</span></div>
+          <div class="sr-progress" aria-hidden="true"><div id="sr-progress-bar"></div></div>
+        </div>
+
+        <div id="sr-questions" hidden>
+          <div class="sr-question" id="sr-question-1" data-sr-question="1">
+            <div class="sr-question-number">01</div>
+            <h3 tabindex="-1">What best describes your role?</h3>
+            <p class="sr-question-subtitle">This helps us tailor the results to your perspective.</p>
+            <div class="sr-options">
+              <button type="button" data-sr-answer="role:A">HR / People Leader</button>
+              <button type="button" data-sr-answer="role:B">Talent Acquisition / Recruiting</button>
+              <button type="button" data-sr-answer="role:C">Hiring Manager / Business Leader</button>
+              <button type="button" data-sr-answer="role:D">HR Technology / HRIS / IT</button>
+              <button type="button" data-sr-answer="role:E">HR Operations / Change Management</button>
+              <button type="button" data-sr-answer="role:F">Executive Sponsor (CHRO, CIO, CFO)</button>
+              <button type="button" data-sr-answer="role:G">Other</button>
+            </div>
+          </div>
+
+          <div class="sr-question" id="sr-question-2" data-sr-question="2" hidden>
+            <div class="sr-question-number">02</div>
+            <h3 tabindex="-1">What do you most want your recruiting technology solution to provide?</h3>
+            <p class="sr-question-subtitle">Choose the outcome that matters most to you.</p>
+            <div class="sr-options">
+              <button type="button" data-sr-answer="goal:A">Improve recruiter productivity</button>
+              <button type="button" data-sr-answer="goal:B">Reduce time-to-fill</button>
+              <button type="button" data-sr-answer="goal:C">Increase candidate engagement</button>
+              <button type="button" data-sr-answer="goal:D">Improve hiring manager participation</button>
+              <button type="button" data-sr-answer="goal:E">Flexible workflows for every type of hire</button>
+              <button type="button" data-sr-answer="goal:F">Prepare our recruiting for AI</button>
+              <button type="button" data-sr-answer="goal:G">Integrate recruiting with SAP SuccessFactors</button>
+              <button type="button" data-sr-answer="goal:H">I&rsquo;m not sure where our biggest opportunity is</button>
+            </div>
+          </div>
+
+          <div class="sr-question" id="sr-question-3" data-sr-question="3" hidden>
+            <div class="sr-question-number">03</div>
+            <h3 tabindex="-1">What&rsquo;s your biggest recruiting challenge today?</h3>
+            <p class="sr-question-subtitle">Tell us what&rsquo;s getting in the way.</p>
+            <div class="sr-options">
+              <button type="button" data-sr-answer="challenge:A">Recruiters rely on workarounds and manual admin</button>
+              <button type="button" data-sr-answer="challenge:B">Hiring managers fall back on email and spreadsheets</button>
+              <button type="button" data-sr-answer="challenge:C">Candidates drop off or get inconsistent communication</button>
+              <button type="button" data-sr-answer="challenge:D">Hiring simply takes too long</button>
+              <button type="button" data-sr-answer="challenge:E">We have limited internal resources for a major transition</button>
+              <button type="button" data-sr-answer="challenge:F">We&rsquo;re unsure about SAP&rsquo;s timeline and what it means for us</button>
+              <button type="button" data-sr-answer="challenge:G">Our recruiting data and integrations are complex</button>
+              <button type="button" data-sr-answer="challenge:H">Building the business case and executive buy-in</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="sr-result" hidden>
+          <div class="sr-result-header">
+            <div class="sr-eyebrow">Your personalized SmartRecruiters result</div>
+            <h2 id="sr-result-title" tabindex="-1"></h2>
+          </div>
+          <div class="sr-result-content">
+            <div class="sr-result-intro" id="sr-role-opening"></div>
+            <h3>Your opportunity</h3>
+            <p id="sr-goal-copy"></p>
+            <div class="sr-goal-box">
+              <strong>Based on your responses...</strong>
+              <p id="sr-challenge-copy"></p>
+            </div>
+            <h3>SmartRecruiters capabilities that can help</h3>
+            <div id="sr-features"></div>
+
+            <div class="sr-next-step">
+              <h3>Your next step</h3>
+              <p>The most successful organizations won&rsquo;t wait for a mandate. Get the full feature-by-feature comparison and our recommendations for building your SmartRecruiters roadmap.</p>
+              <a id="sr-primary-cta" href="https://hrizons.com/wp-content/uploads/2026/08/SmartRecruiters__Exec_Summary_w_Matrix_260814.pdf" class="sr-secondary-btn" target="_blank" rel="noopener" data-cta-name="finder-result-download" data-resource-name="smartrecruiters-executive-guide">Download the SmartRecruiters Executive Guide</a>
+              <a href="#assessment" class="sr-link-btn" data-cta-name="finder-result-book">Or book a SmartRecruiters readiness assessment</a>
+            </div>
+
+            <button type="button" class="sr-restart" data-sr-restart>&larr; Start Over</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>

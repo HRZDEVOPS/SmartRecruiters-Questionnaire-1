@@ -1,0 +1,109 @@
+/* SmartRecruiters Recruiting Priorities Finder. Layout from the JDMS Challenge Finder template;
+   colors and type mapped to HRIZONS tokens (tokens.css). */
+
+.finder { margin-top: 96px; padding: 88px 0; background: var(--hrz-bone); }
+
+#sr-recruiting-finder { max-width: 948px; color: var(--hrz-graphite); scroll-margin-top: 88px; }
+#sr-recruiting-finder [hidden] { display: none !important; }
+
+.sr-container {
+  padding: 48px;
+  border-radius: 16px;
+  background: var(--hrz-paper);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, .25);
+}
+#sr-recruiting-finder h2, #sr-recruiting-finder h3 { color: var(--hrz-ink); font-family: var(--hrz-font-display); }
+#sr-recruiting-finder h2:focus, #sr-recruiting-finder h3:focus { outline: none; }
+
+/* Intro */
+.sr-intro { max-width: 700px; margin: 0 auto; text-align: center; }
+.sr-eyebrow {
+  margin-bottom: 14px;
+  color: var(--hrz-orange);
+  font: var(--hrz-w-bold) 13px/1.3 var(--hrz-font-display);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.sr-intro h2 { margin: 0 0 14px; font-size: 42px; line-height: 1.1; }
+.sr-intro-lead { margin: 0 0 15px; color: var(--hrz-ink); font: italic 24px/1.4 var(--hrz-font-italic); }
+.sr-intro p { font-size: 17px; line-height: 1.65; }
+
+/* Buttons: one treatment shared by start, answers, result CTA, and restart */
+#sr-recruiting-finder .sr-primary-btn,
+#sr-recruiting-finder .sr-options button,
+#sr-recruiting-finder .sr-secondary-btn,
+#sr-recruiting-finder .sr-restart {
+  display: inline-block;
+  padding: 15px 24px;
+  border: 0;
+  border-radius: var(--hrz-radius-sm);
+  background: var(--hrz-orange);
+  color: var(--hrz-paper);
+  font: var(--hrz-w-bold) 16px/1.4 var(--hrz-font-display);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--hrz-dur-fast) var(--hrz-ease-out), transform var(--hrz-dur-fast) var(--hrz-ease-out), box-shadow var(--hrz-dur-fast) var(--hrz-ease-out);
+}
+#sr-recruiting-finder .sr-primary-btn:hover,
+#sr-recruiting-finder .sr-options button:hover,
+#sr-recruiting-finder .sr-secondary-btn:hover,
+#sr-recruiting-finder .sr-restart:hover {
+  background: var(--hrz-slate);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(15, 27, 45, .2);
+}
+#sr-recruiting-finder button:focus-visible,
+#sr-recruiting-finder a:focus-visible { outline: 3px solid var(--hrz-orange-glow); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  #sr-recruiting-finder * { transition: none !important; transform: none !important; }
+}
+
+#sr-recruiting-finder .sr-primary-btn { margin-top: 20px; }
+#sr-recruiting-finder .sr-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+#sr-recruiting-finder .sr-options button { width: 100%; min-height: 58px; margin: 0; }
+#sr-recruiting-finder .sr-secondary-btn { display: block; width: 100%; margin-top: 18px; }
+#sr-recruiting-finder .sr-restart { display: block; margin: 28px auto 0; background: var(--hrz-ink); }
+.sr-link-btn { display: inline-block; margin-top: 14px; color: var(--hrz-orange-deep); font-weight: var(--hrz-w-bold); }
+
+/* Progress */
+.sr-progress-wrapper { margin-bottom: 40px; }
+.sr-progress-text { margin-bottom: 8px; color: var(--hrz-slate); font-size: 13px; font-weight: var(--hrz-w-bold); text-align: right; }
+.sr-progress { height: 6px; overflow: hidden; border-radius: 5px; background: var(--hrz-mist); }
+#sr-progress-bar { width: 33.33%; height: 100%; background: var(--hrz-orange); transition: width .35s ease; }
+
+/* Questions */
+.sr-question { max-width: 720px; margin: 0 auto; }
+.sr-question-number { margin-bottom: 8px; color: var(--hrz-orange); font-size: 14px; font-weight: var(--hrz-w-bold); }
+.sr-question h3 { margin: 0 0 10px; font-size: 30px; line-height: 1.25; }
+.sr-question-subtitle { margin-bottom: 25px; color: var(--hrz-slate); }
+
+/* Result */
+.sr-result-header { padding-bottom: 25px; border-bottom: var(--hrz-border); text-align: center; }
+.sr-result-header h2 { margin: 0; font-size: 36px; line-height: 1.2; }
+.sr-result-content { max-width: 720px; margin: 35px auto 0; }
+.sr-result-intro { margin-bottom: 25px; color: var(--hrz-ink); font-size: 18px; font-weight: var(--hrz-w-bold); line-height: 1.6; }
+.sr-result-content h3 { margin: 30px 0 12px; font-size: 22px; }
+.sr-result-content p { font-size: 16px; line-height: 1.65; }
+.sr-goal-box { margin: 28px 0; padding: 22px; border-left: 4px solid var(--hrz-orange); border-radius: var(--hrz-radius-md); background: var(--hrz-cream); }
+.sr-goal-box strong { color: var(--hrz-ink); font-size: 17px; }
+.sr-goal-box p { margin: 8px 0 0; }
+.sr-feature { margin-bottom: 12px; padding: 18px 20px; border: var(--hrz-border); border-radius: var(--hrz-radius-md); }
+.sr-feature-title { margin-bottom: 5px; color: var(--hrz-ink); font-weight: var(--hrz-w-bold); }
+.sr-feature-description { margin: 0 !important; color: var(--hrz-slate); }
+.sr-feature-compare { margin: 10px 0 0 !important; padding-top: 10px; border-top: 1px dashed var(--hrz-mist); color: var(--hrz-slate); font-size: 14px !important; line-height: 1.5 !important; }
+.sr-feature-compare span { color: var(--hrz-orange-deep); font-weight: var(--hrz-w-bold); }
+.sr-next-step { margin-top: 35px; padding: 30px; border-radius: 12px; background: var(--hrz-bone); text-align: center; }
+.sr-next-step h3 { margin-top: 0 !important; }
+
+
+@media (max-width: 650px) {
+  .finder { padding: 48px 0; }
+  #sr-recruiting-finder { scroll-margin-top: 136px; }
+  .sr-container { padding: 28px 20px; }
+  .sr-intro h2 { font-size: 32px; }
+  .sr-intro-lead { font-size: 20px; }
+  #sr-recruiting-finder .sr-options { grid-template-columns: 1fr; }
+  .sr-question h3 { font-size: 25px; }
+  .sr-result-header h2 { font-size: 29px; }
+}

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartRecruiters Recruiting Priorities Finder | HRIZONS</title>
+<style>body { margin: 0; padding: 16px; background: #f3f4f6; }</style>
+</head>
+<body>
+
+<!-- ============================================================
+     BEGIN EMBED: SMARTRECRUITERS RECRUITING PRIORITIES FINDER
+     HRIZONS / SmartRecruiters
+     Copy everything between BEGIN EMBED and END EMBED into an
+     HTML / Custom HTML block on any page.
+     ============================================================ -->
+
+<div id="sr-recruiting-finder">
+  <div class="sr-container">
+
+    <div class="sr-intro" id="sr-intro">
+      <div class="sr-eyebrow">SmartRecruiters Recruiting Priorities Finder</div>
+      <h2 id="sr-intro-title" tabindex="-1">What Should Your Recruiting Technology Deliver?</h2>
+      <p class="sr-intro-lead">Where should your SmartRecruiters journey begin?</p>
+      <p>Answer three quick questions and we&rsquo;ll instantly show you the SmartRecruiters capabilities that match your recruiting priorities, and how they compare with SAP&reg; SuccessFactors&reg; Recruiting today.</p>
+      <button type="button" class="sr-primary-btn" data-sr-start data-cta-name="finder-start">Find My Recruiting Priorities &rarr;</button>
+    </div>
+
+    <div class="sr-progress-wrapper" id="sr-progress-wrapper" hidden>
+      <div class="sr-progress-text"><span id="sr-progress-label" aria-live="polite">Question 1 of 3</span></div>
+      <div class="sr-progress" aria-hidden="true"><div id="sr-progress-bar"></div></div>
+    </div>
+
+    <div id="sr-questions" hidden>
+      <div class="sr-question" id="sr-question-1" data-sr-question="1">
+        <div class="sr-question-number">01</div>
+        <h3 tabindex="-1">What best describes your role?</h3>
+        <p class="sr-question-subtitle">This helps us tailor the results to your perspective.</p>
+        <div class="sr-options">
+          <button type="button" data-sr-answer="role:A">HR / People Leader</button>
+          <button type="button" data-sr-answer="role:B">Talent Acquisition / Recruiting</button>
+          <button type="button" data-sr-answer="role:C">Hiring Manager / Business Leader</button>
+          <button type="button" data-sr-answer="role:D">HR Technology / HRIS / IT</button>
+          <button type="button" data-sr-answer="role:E">HR Operations / Change Management</button>
+          <button type="button" data-sr-answer="role:F">Executive Sponsor (CHRO, CIO, CFO)</button>
+          <button type="button" data-sr-answer="role:G">Other</button>
+        </div>
+      </div>
+
+      <div class="sr-question" id="sr-question-2" data-sr-question="2" hidden>
+        <div class="sr-question-number">02</div>
+        <h3 tabindex="-1">What do you most want your recruiting technology solution to provide?</h3>
+        <p class="sr-question-subtitle">Choose the outcome that matters most to you.</p>
+        <div class="sr-options">
+          <button type="button" data-sr-answer="goal:A">Improve recruiter productivity</button>
+          <button type="button" data-sr-answer="goal:B">Reduce time-to-fill</button>
+          <button type="button" data-sr-answer="goal:C">Increase candidate engagement</button>
+          <button type="button" data-sr-answer="goal:D">Improve hiring manager participation</button>
+          <button type="button" data-sr-answer="goal:E">Flexible workflows for every type of hire</button>
+          <button type="button" data-sr-answer="goal:F">Prepare our recruiting for AI</button>
+          <button type="button" data-sr-answer="goal:G">Integrate recruiting with SAP SuccessFactors</button>
+          <button type="button" data-sr-answer="goal:H">I&rsquo;m not sure where our biggest opportunity is</button>
+        </div>
+      </div>
+
+      <div class="sr-question" id="sr-question-3" data-sr-question="3" hidden>
+        <div class="sr-question-number">03</div>
+        <h3 tabindex="-1">What&rsquo;s your biggest recruiting challenge today?</h3>
+        <p class="sr-question-subtitle">Tell us what&rsquo;s getting in the way.</p>
+        <div class="sr-options">
+          <button type="button" data-sr-answer="challenge:A">Recruiters rely on workarounds and manual admin</button>
+          <button type="button" data-sr-answer="challenge:B">Hiring managers fall back on email and spreadsheets</button>
+          <button type="button" data-sr-answer="challenge:C">Candidates drop off or get inconsistent communication</button>
+          <button type="button" data-sr-answer="challenge:D">Hiring simply takes too long</button>
+          <button type="button" data-sr-answer="challenge:E">We have limited internal resources for a major transition</button>
+          <button type="button" data-sr-answer="challenge:F">We&rsquo;re unsure about SAP&rsquo;s timeline and what it means for us</button>
+          <button type="button" data-sr-answer="challenge:G">Our recruiting data and integrations are complex</button>
+          <button type="button" data-sr-answer="challenge:H">Building the business case and executive buy-in</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="sr-result" hidden>
+      <div class="sr-result-header">
+        <div class="sr-eyebrow">Your personalized SmartRecruiters result</div>
+        <h2 id="sr-result-title" tabindex="-1"></h2>
+      </div>
+      <div class="sr-result-content">
+        <div class="sr-result-intro" id="sr-role-opening"></div>
+        <h3>Your opportunity</h3>
+        <p id="sr-goal-copy"></p>
+        <div class="sr-goal-box">
+          <strong>Based on your responses...</strong>
+          <p id="sr-challenge-copy"></p>
+        </div>
+        <h3>SmartRecruiters capabilities that can help</h3>
+        <div id="sr-features"></div>
+
+        <div class="sr-next-step">
+          <h3>Your next step</h3>
+          <p>The most successful organizations won&rsquo;t wait for a mandate. Get the full feature-by-feature comparison and our recommendations for building your SmartRecruiters roadmap.</p>
+          <a id="sr-primary-cta" href="https://hrizons.com/wp-content/uploads/2026/08/SmartRecruiters__Exec_Summary_w_Matrix_260814.pdf" class="sr-secondary-btn" target="_blank" rel="noopener" data-cta-name="finder-result-download" data-resource-name="smartrecruiters-executive-guide">Download the SmartRecruiters Executive Guide</a>
+          <a href="https://hrizons.com/hrizons-smartrecruiters-transition/" class="sr-link-btn" data-cta-name="finder-result-book">Or talk to HRIZONS about a readiness assessment</a>
+        </div>
+
+        <button type="button" class="sr-restart" data-sr-restart>&larr; Start Over</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+
+/* ============================================================
+   SMARTRECRUITERS RECRUITING PRIORITIES FINDER STYLES
+   ============================================================ */
+
+#sr-recruiting-finder {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  max-width: 900px;
+  margin: 40px auto;
+  color: #20252b;
+}
+
+#sr-recruiting-finder * {
+  box-sizing: border-box;
+}
+
+#sr-recruiting-finder [hidden] {
+  display: none !important;
+}
+
+.sr-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 8px 35px rgba(0,0,0,0.08);
+}
+
+
+/* INTRO */
+
+.sr-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.sr-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  color: #dd7c3b;
+}
+
+.sr-intro h2 {
+  font-size: 42px;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.sr-intro-lead {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 15px;
+}
+
+.sr-intro p {
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+
+/* BUTTONS */
+
+/* MASTER BUTTON STYLE — MATCHES "START MY JD CHALLENGE" */
+#sr-recruiting-finder .sr-primary-btn,
+#sr-recruiting-finder .sr-options button,
+#sr-recruiting-finder .sr-secondary-btn,
+#sr-recruiting-finder .sr-restart {
+  display: inline-block;
+  border: none;
+  border-radius: 7px;
+  padding: 15px 24px;
+  background: #dd7c3b;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* HOVER STATE */
+#sr-recruiting-finder .sr-primary-btn:hover,
+#sr-recruiting-finder .sr-options button:hover,
+#sr-recruiting-finder .sr-secondary-btn:hover,
+#sr-recruiting-finder .sr-restart:hover {
+  background: #63656a;
+  color: #ffffff !important;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(0,112,201,0.20);
+}
+
+/* KEYBOARD / ACCESSIBILITY FOCUS */
+#sr-recruiting-finder .sr-primary-btn:focus,
+#sr-recruiting-finder .sr-options button:focus,
+#sr-recruiting-finder .sr-secondary-btn:focus,
+#sr-recruiting-finder .sr-restart:focus {
+  outline: 3px solid rgba(0,112,201,0.30);
+  outline-offset: 2px;
+}
+
+/* START BUTTON */
+#sr-recruiting-finder .sr-primary-btn {
+  margin-top: 20px;
+}
+
+/* QUESTION ANSWER BUTTONS */
+#sr-recruiting-finder .sr-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+#sr-recruiting-finder .sr-options button {
+  width: 100%;
+  margin: 0;
+  min-height: 58px;
+}
+
+/* SECONDARY CTA */
+#sr-recruiting-finder .sr-secondary-btn {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+}
+
+/* RESTART BUTTON */
+#sr-recruiting-finder .sr-restart {
+  display: block;
+  margin: 28px auto 0;
+}
+
+
+/* PROGRESS */
+
+.sr-progress-wrapper {
+  margin-bottom: 40px;
+}
+
+.sr-progress-text {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+.sr-progress {
+  height: 6px;
+  background: #e9edf1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#sr-progress-bar {
+  height: 100%;
+  width: 33.33%;
+  background: #dd7c3b;
+  transition: width 0.35s ease;
+}
+
+
+/* QUESTIONS */
+
+.sr-question {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sr-question-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: #dd7c3b;
+  margin-bottom: 8px;
+}
+
+.sr-question h3 {
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.sr-question-subtitle {
+  color: #66717c;
+  margin-bottom: 25px;
+}
+
+/* RESULT */
+
+.sr-result-header {
+  text-align: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e5e9ed;
+}
+
+.sr-result-header h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.sr-result-content {
+  max-width: 720px;
+  margin: 35px auto 0;
+}
+
+.sr-result-intro {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.sr-result-content h3 {
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+.sr-result-content p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+
+/* GOAL BOX */
+
+.sr-goal-box {
+  background: #f3f7fa;
+  border-radius: 10px;
+  padding: 22px;
+  margin: 28px 0;
+}
+
+.sr-goal-box strong {
+  font-size: 17px;
+}
+
+
+/* FEATURES */
+
+.sr-feature {
+  padding: 18px 20px;
+  border: 1px solid #e0e5e9;
+  border-radius: 9px;
+  margin-bottom: 12px;
+}
+
+.sr-feature-title {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.sr-feature-description {
+  margin: 0 !important;
+  color: #59636d;
+}
+
+.sr-feature-compare {
+  margin: 10px 0 0 !important;
+  padding-top: 10px;
+  border-top: 1px dashed #e0e5e9;
+  color: #59636d;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+.sr-feature-compare span {
+  color: #dd7c3b;
+  font-weight: 700;
+}
+
+
+/* NEXT STEP */
+
+.sr-next-step {
+  text-align: center;
+  background: #f7f9fb;
+  border-radius: 12px;
+  padding: 30px;
+  margin-top: 35px;
+}
+
+
+/* SECONDARY LINK */
+
+.sr-link-btn {
+  display: inline-block;
+  margin-top: 14px;
+  color: #dd7c3b;
+  font-weight: 700;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  #sr-recruiting-finder {
+    margin: 20px 10px;
+  }
+
+  .sr-container {
+    padding: 28px 20px;
+  }
+
+  .sr-intro h2 {
+    font-size: 32px;
+  }
+
+  .sr-intro-lead {
+    font-size: 20px;
+  }
+
+  .sr-options {
+    grid-template-columns: 1fr;
+  }
+
+  .sr-question h3 {
+    font-size: 25px;
+  }
+
+  .sr-result-header h2 {
+    font-size: 29px;
+  }
+
+}
+
+</style>
+
+
+<script>
+// SmartRecruiters Recruiting Priorities Finder: three questions, then an immediate personalized result.
+// Layout follows the JDMS Challenge Finder template. Copy, statistics, and feature comparisons come from
+// the HRIZONS Solution Guide "Building the Business Case for SmartRecruiters" (Exec Summary w/ Matrix, 260814).
+// Standalone embed version; only answer codes are reported to analytics.
+(() => {
+  const root = document.getElementById('sr-recruiting-finder');
+  if (!root) return;
+
+  const answers = { role: null, goal: null, challenge: null };
+
+  const roles = {
+    A: { label: 'HR / People Leader', opening: "As an HR/People leader, you're accountable for a recruiting strategy that keeps up with the pace of business, and for how the move to SmartRecruiters affects your people, processes and long-term roadmap." },
+    B: { label: 'Talent Acquisition / Recruiting', opening: 'Recruiters are the primary users of the platform. Your success depends on streamlined workflows, automation that eliminates repetitive administrative tasks and meaningful analytics that support better hiring decisions.' },
+    C: { label: 'Hiring Manager / Business Leader', opening: 'Hiring managers are frequently the most overlooked audience in recruiting technology projects, yet you play a critical role in every successful hire.' },
+    D: { label: 'HR Technology / HRIS / IT', opening: 'SmartRecruiters will become part of a broader SAP SuccessFactors ecosystem, so integration requirements, reporting dependencies, data governance and security all land on your desk.' },
+    E: { label: 'HR Operations / Change Management', opening: 'Technology provides the capabilities, but people determine whether they translate into business value. Change management is a strategic discipline that begins long before go-live and continues well after it.' },
+    F: { label: 'Executive Sponsor (CHRO, CIO, CFO)', opening: "SAP's acquisition of SmartRecruiters is one of the most significant changes to the Talent Acquisition technology landscape in a decade. Organizations that start early keep control of the timeline, budget and implementation approach." },
+    G: { label: 'Other', opening: 'Every interaction with your recruiting platform shapes how candidates, recruiters and hiring managers experience your organization.' }
+  };
+
+  // Capabilities from the guide's feature comparison (pages 7-8). `compare` is the guide's
+  // SAP SuccessFactors Recruiting column, shown so current SAP customers can see the difference.
+  const features = {
+    bulk: ['Bulk Actions & Recruitment Automation', 'Perform bulk candidate communications, interview scheduling, status updates and workflow automation, ideal for high-volume hiring.', 'Bulk updates often require navigating multiple workflows or manual coordination.'],
+    scheduling: ['Automated Interview Scheduling & Rescheduling', 'Automated scheduling for 1:1, panel, bulk and event interviews, with candidate self-service rescheduling by email, SMS and WhatsApp.', 'Interview updates commonly require cancelling and re-issuing invitations.'],
+    profile: ['Unified Candidate Profile & Duplicate Management', 'One profile consolidates applications, communications and CRM activity, with automatic duplicate detection and merging.', 'Duplicate management is handled manually, and candidate activity may span multiple records.'],
+    crm: ['Unified CRM & Talent Pipelines', 'Built-in CRM enables proactive talent pooling, segmentation and nurture campaigns directly within recruiting workflows.', 'CRM capabilities are typically extended through partner solutions or integrations.'],
+    approvals: ['Flexible Job Configuration & Approvals', 'Dynamic fields, configurable logic and flexible approval workflows reduce admin effort and let hiring processes adapt quickly.', 'The structured configuration model often requires administrative updates or template changes.'],
+    managers: ['Hiring Manager Collaboration', 'Feedback, approvals and collaboration directly within familiar tools and mobile experiences, improving adoption across hiring teams.', 'Hiring manager workflows often rely on structured navigation and additional training.'],
+    roleBased: ['Simplified, Role-Based Experience', 'Hiring managers review candidates, provide feedback, collaborate with recruiters and move candidates forward with minimal effort.'],
+    candidateExperience: ['Flexible Candidate Experiences', 'Configurable application journeys tailored by hiring type, from quick-apply hourly roles to detailed professional applications.', 'Application experiences are configurable but typically more template-driven.'],
+    messaging: ['Multi-Channel Candidate Communication', 'Native communication across email, SMS, WhatsApp, Microsoft Teams and Slack, with full conversation history in one place.', 'Communication is primarily email-based; additional channels require integrations.'],
+    multiBrand: ['Multi-Brand Recruiting', 'Manage multiple brands, business units or regions in one instance, each with dedicated career experiences, workflows and branding, while sharing data and governance.', 'Multi-brand is supported through career site configuration with a more segmented setup model.'],
+    workflows: ['Configurable Hiring Workflows', 'Drag-and-drop hiring processes let teams design workflows for high-volume, campus, professional and executive hiring within one platform.', 'Multiple workflow templates are supported but typically require deeper configuration and administrative setup.'],
+    volume: ['High-Volume & Professional Hiring in One Platform', 'Rapid, high-volume hiring with bulk actions and simplified applications alongside structured professional workflows, in the same environment.', 'Hiring models are often managed through separate configuration approaches and templates.'],
+    processFlex: ['Hiring Process Flexibility', 'Include multiple assessments, background checks and other tools throughout your processes to capture every candidate requirement.', 'Limited to one assessment or background check in a hiring process.'],
+    ai: ['AI-Driven Recommendations', 'SmartRecruiters introduces AI-driven recommendations and user experiences designed specifically for today’s hiring environment.'],
+    ecosystem: ['Part of the SAP SuccessFactors Ecosystem', 'SmartRecruiters will connect with Employee Central, Onboarding, Workforce Analytics, SAP Business AI and future Talent Intelligence capabilities.'],
+    sideBySide: ['Side-by-Side Migration', 'SAP allows recruiting teams to run SAP SuccessFactors Recruiting alongside SmartRecruiters, simplifying migration and reducing system disruption.'],
+    integrationPlan: ['Integration & Governance Planning', 'Evaluate current workflows, integration requirements, reporting dependencies, data governance models and security and compliance requirements with HRIZONS.'],
+    everyUser: ['Designed for Every User', 'Tailor workflows and interfaces to candidates, recruiters and hiring managers for stronger adoption and a greater return on your investment.'],
+    maturity: ['Recruiting Maturity Assessment', 'Evaluate your current recruiting maturity and identify the improvements that will deliver value first.'],
+    roadmap: ['A Roadmap Aligned with Your Business', 'Align recruiting technology with long-term business objectives, on a timeline you control.']
+  };
+
+  const goals = {
+    A: {
+      title: 'Your Recruiting Priority: Recruiter Productivity',
+      copy: 'Recruiters need streamlined workflows and automation that eliminates repetitive administrative tasks. Based on your responses, your biggest opportunity may be helping recruiters spend less time managing the recruiting system and more time building relationships with candidates and hiring managers.',
+      features: ['bulk', 'scheduling', 'profile', 'crm'],
+      cta: 'See How SmartRecruiters Boosts Recruiter Productivity →'
+    },
+    B: {
+      title: 'Your Recruiting Priority: Reducing Time-to-Fill',
+      copy: 'Every delay in scheduling, approvals and feedback adds time to every hire. Based on your responses, your biggest opportunity may be removing those delays. In a 2025 SmartRecruiters case study, organizations saw a 75% reduction in time from post to hire, with 37% of openings filled before their target date.',
+      features: ['scheduling', 'approvals', 'managers', 'bulk'],
+      cta: 'See How SmartRecruiters Shortens Time-to-Fill →'
+    },
+    C: {
+      title: 'Your Recruiting Priority: Candidate Engagement',
+      copy: "Every interaction with your recruiting platform shapes a candidate's perception of your organization. Based on your responses, your biggest opportunity may be simplifying the application process and improving communication throughout the hiring journey. A 2025 SmartRecruiters case study reported a 38% increase in application-to-hire rate.",
+      features: ['candidateExperience', 'messaging', 'scheduling', 'multiBrand'],
+      cta: 'Explore the SmartRecruiters Candidate Experience →'
+    },
+    D: {
+      title: 'Your Recruiting Priority: Hiring Manager Participation',
+      copy: 'When the hiring manager experience is cumbersome, adoption suffers, feedback is delayed and hiring decisions slow dramatically. Based on your responses, your biggest opportunity may be making participation easy enough that hiring managers become true partners in hiring.',
+      features: ['managers', 'roleBased', 'approvals', 'scheduling'],
+      cta: 'See How SmartRecruiters Engages Hiring Managers →'
+    },
+    E: {
+      title: 'Your Recruiting Priority: Flexibility for Every Type of Hire',
+      copy: 'Different roles call for different hiring processes. Based on your responses, your biggest opportunity may be supporting high-volume, campus, professional and executive hiring, across brands and regions, within one configurable platform.',
+      features: ['workflows', 'volume', 'multiBrand', 'processFlex'],
+      cta: 'Explore SmartRecruiters Configurability →'
+    },
+    F: {
+      title: 'Your Recruiting Priority: AI Readiness',
+      copy: "SAP's vision to become the leading Business AI company places Talent Acquisition at the center of future innovation. Based on your responses, your biggest opportunity may be building the foundation AI depends on: clean recruiting data, standardized workflows, consistent hiring processes, strong governance and integrated HR systems.",
+      features: ['ai', 'profile', 'workflows', 'ecosystem'],
+      cta: 'Get Your Recruiting Data Ready for AI →'
+    },
+    G: {
+      title: 'Your Recruiting Priority: SAP SuccessFactors Integration',
+      copy: 'SmartRecruiters will ultimately become part of a broader SAP SuccessFactors ecosystem. Based on your responses, your biggest opportunity may be planning integrations, reporting dependencies and data governance early. Early planning reduces implementation risk and avoids costly redesign later.',
+      features: ['ecosystem', 'sideBySide', 'processFlex', 'integrationPlan'],
+      cta: 'Plan Your SmartRecruiters Integration →'
+    },
+    H: {
+      title: 'Your Recruiting Opportunity: Finding the Right Starting Point',
+      copy: "You're not alone. Many SAP SuccessFactors Recruiting customers are still evaluating how SmartRecruiters will affect their recruiting strategy, technology investments and roadmap. Based on your responses, your biggest opportunity may be assessing your current recruiting maturity and building a roadmap before timelines are set for you.",
+      features: ['maturity', 'everyUser', 'sideBySide', 'roadmap'],
+      cta: 'Get Your SmartRecruiters Readiness Roadmap →'
+    }
+  };
+
+  const challenges = {
+    A: 'You told us recruiters rely on workarounds and manual administration. That is a common sign of a platform that works as designed but never achieves real adoption. Automating routine tasks and configuring workflows around how recruiters actually work frees them to focus on candidates and hiring managers.',
+    B: 'You told us hiring managers fall back on email and spreadsheets. When participation is time-consuming, feedback is delayed and decisions slow down. Bringing feedback and approvals into familiar tools and mobile experiences makes it easier for managers to stay engaged.',
+    C: 'You told us candidates drop off or receive inconsistent communication. A complicated application, poor communication or a lack of transparency can quickly discourage top talent from applying or accepting an offer. Evaluating every touchpoint, from job discovery to offer acceptance, is the place to start.',
+    D: 'You told us hiring takes too long. Manual scheduling, rigid approvals and slow feedback add days to every hire. Organizations that modernize these steps reduce time-to-fill and gain a real competitive advantage in the market for talent.',
+    E: 'You told us internal resources are limited. Major technology transitions place significant demands on HR, Talent Acquisition, IT and change management teams, and organizations that delay often face resource shortages and compressed timelines. Starting early lets you plan the work around your team, not the other way around.',
+    F: "You told us you're unsure about SAP's timeline. Many organizations assume they can wait for SAP to publish final timelines, but history suggests otherwise. Because SAP allows SAP SuccessFactors Recruiting to run alongside SmartRecruiters, you can plan a phased move on your own terms.",
+    G: 'You told us your recruiting data and integrations are complex. Reporting dependencies, data governance models and security and compliance requirements all take time to map. Evaluating them now reduces implementation risk and avoids costly redesign efforts later.',
+    H: 'You told us building the business case is your biggest hurdle. Organizations that treat this as a business transformation, rather than a software migration, consistently achieve better outcomes: faster hiring, higher application-to-hire rates and more openings filled on time. Our executive guide is designed to help you make that case.'
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const intro = $('sr-intro');
+  const progress = $('sr-progress-wrapper');
+  const questions = $('sr-questions');
+  const result = $('sr-result');
+  const total = 3;
+
+  // Optional analytics: pushes to Google Tag Manager when it is present on the page.
+  const emit = (eventName, parameters = {}) => {
+    if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: eventName, ...parameters });
+  };
+
+  // Keep the finder in view (clear of the sticky header) and move focus for screen-reader users.
+  const focusHeading = (container) => {
+    const heading = container.querySelector('h2, h3');
+    heading?.focus({ preventScroll: true });
+    const top = root.getBoundingClientRect().top;
+    const headerOffset = parseFloat(getComputedStyle(root).scrollMarginTop) || 0;
+    if (top < headerOffset || top > innerHeight * 0.4) root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  function showQuestion(number) {
+    root.querySelectorAll('[data-sr-question]').forEach((el) => { el.hidden = el.dataset.srQuestion !== String(number); });
+    $('sr-progress-label').textContent = `Question ${number} of ${total}`;
+    $('sr-progress-bar').style.width = `${(number / total) * 100}%`;
+    focusHeading($(`sr-question-${number}`));
+  }
+
+  function start() {
+    intro.hidden = true;
+    progress.hidden = false;
+    questions.hidden = false;
+    showQuestion(1);
+    emit('finder_started', { finder_id: 'sr-recruiting-finder' });
+  }
+
+  function featureCard([titleText, descriptionText, compareText]) {
+    const box = document.createElement('div');
+    box.className = 'sr-feature';
+    const title = document.createElement('div');
+    title.className = 'sr-feature-title';
+    title.textContent = titleText;
+    const description = document.createElement('p');
+    description.className = 'sr-feature-description';
+    description.textContent = descriptionText;
+    box.append(title, description);
+    if (compareText) {
+      const compare = document.createElement('p');
+      compare.className = 'sr-feature-compare';
+      const label = document.createElement('span');
+      label.textContent = 'In SAP SuccessFactors Recruiting today: ';
+      compare.append(label, compareText);
+      box.append(compare);
+    }
+    return box;
+  }
+
+  function showResult() {
+    questions.hidden = true;
+    progress.hidden = true;
+
+    const goal = goals[answers.goal];
+    $('sr-role-opening').textContent = roles[answers.role].opening;
+    $('sr-result-title').textContent = goal.title;
+    $('sr-goal-copy').textContent = goal.copy;
+    $('sr-challenge-copy').textContent = challenges[answers.challenge];
+    $('sr-features').replaceChildren(...goal.features.map((key) => featureCard(features[key])));
+    $('sr-primary-cta').textContent = goal.cta;
+
+    result.hidden = false;
+    focusHeading(result);
+
+    emit('sr_finder_completed', {
+      sr_role: answers.role,
+      sr_goal: answers.goal,
+      sr_challenge: answers.challenge,
+      sr_result: goal.title
+    });
+  }
+
+  function answer(type, value) {
+    answers[type] = value;
+    if (type === 'role') showQuestion(2);
+    else if (type === 'goal') showQuestion(3);
+    else if (type === 'challenge') showResult();
+  }
+
+  function restart() {
+    answers.role = answers.goal = answers.challenge = null;
+    result.hidden = true;
+    progress.hidden = true;
+    questions.hidden = true;
+    intro.hidden = false;
+    focusHeading(intro);
+  }
+
+  root.addEventListener('click', (event) => {
+    const target = event.target.closest('button');
+    if (!target) return;
+    if (target.matches('[data-sr-start]')) start();
+    else if (target.matches('[data-sr-restart]')) restart();
+    else if (target.dataset.srAnswer) {
+      const [type, value] = target.dataset.srAnswer.split(':');
+      answer(type, value);
+    }
+  });
+})();
+</script>
+
+<!-- ============================================================
+     END EMBED
+     ============================================================ -->
+
+</body>
+</html>
