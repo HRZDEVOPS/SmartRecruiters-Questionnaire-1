@@ -34,7 +34,7 @@
     <div id="sr-questions" hidden>
       <div class="sr-question" id="sr-question-1" data-sr-question="1">
         <div class="sr-question-number">01</div>
-        <h3 tabindex="-1">What best describes your role?</h3>
+        <h3 tabindex="-1">What is your role?</h3>
         <p class="sr-question-subtitle">This helps us tailor the results to your perspective.</p>
         <div class="sr-options">
           <button type="button" data-sr-answer="role:A">HR / People Leader</button>
@@ -49,7 +49,7 @@
 
       <div class="sr-question" id="sr-question-2" data-sr-question="2" hidden>
         <div class="sr-question-number">02</div>
-        <h3 tabindex="-1">What do you most want your recruiting technology solution to provide?</h3>
+        <h3 tabindex="-1">What do you most require from your recruiting technology?</h3>
         <p class="sr-question-subtitle">Choose the outcome that matters most to you.</p>
         <div class="sr-options">
           <button type="button" data-sr-answer="goal:A">Improve recruiter productivity</button>
@@ -65,18 +65,19 @@
 
       <div class="sr-question" id="sr-question-3" data-sr-question="3" hidden>
         <div class="sr-question-number">03</div>
-        <h3 tabindex="-1">What&rsquo;s your biggest recruiting challenge today?</h3>
-        <p class="sr-question-subtitle">Tell us what&rsquo;s getting in the way.</p>
+        <h3 tabindex="-1">What are the biggest challenges your recruiting team faces?</h3>
+        <p class="sr-question-subtitle">Select all that apply, then see your results.</p>
         <div class="sr-options">
-          <button type="button" data-sr-answer="challenge:A">Recruiters rely on workarounds and manual admin</button>
-          <button type="button" data-sr-answer="challenge:B">Hiring managers fall back on email and spreadsheets</button>
-          <button type="button" data-sr-answer="challenge:C">Candidates drop off or get inconsistent communication</button>
-          <button type="button" data-sr-answer="challenge:D">Hiring simply takes too long</button>
-          <button type="button" data-sr-answer="challenge:E">We have limited internal resources for a major transition</button>
-          <button type="button" data-sr-answer="challenge:F">We&rsquo;re unsure about SAP&rsquo;s timeline and what it means for us</button>
-          <button type="button" data-sr-answer="challenge:G">Our recruiting data and integrations are complex</button>
-          <button type="button" data-sr-answer="challenge:H">Building the business case and executive buy-in</button>
+          <button type="button" aria-pressed="false" data-sr-answer="challenge:A">Recruiters rely on workarounds and manual admin</button>
+          <button type="button" aria-pressed="false" data-sr-answer="challenge:B">Hiring managers fall back on email and spreadsheets</button>
+          <button type="button" aria-pressed="false" data-sr-answer="challenge:C">Candidates drop off or get inconsistent communication</button>
+          <button type="button" aria-pressed="false" data-sr-answer="challenge:D">Hiring simply takes too long</button>
+          <button type="button" aria-pressed="false" data-sr-answer="challenge:E">We have limited internal resources for a major transition</button>
+          <button type="button" aria-pressed="false" data-sr-answer="challenge:F">We&rsquo;re unsure about SAP&rsquo;s timeline and what it means for us</button>
+          <button type="button" aria-pressed="false" data-sr-answer="challenge:G">Our recruiting data and integrations are complex</button>
+          <button type="button" aria-pressed="false" data-sr-answer="challenge:H">Building the business case and executive buy-in</button>
         </div>
+        <button type="button" class="sr-primary-btn" data-sr-submit disabled>See My Results &rarr;</button>
       </div>
     </div>
 
@@ -91,7 +92,7 @@
         <p id="sr-goal-copy"></p>
         <div class="sr-goal-box">
           <strong>Based on your responses...</strong>
-          <p id="sr-challenge-copy"></p>
+          <div id="sr-challenge-copy"></div>
         </div>
         <h3>SmartRecruiters capabilities that can help</h3>
         <div id="sr-features"></div>
@@ -257,6 +258,25 @@
   display: block;
   margin: 28px auto 0;
 }
+
+/* MULTI-SELECT (QUESTION 3) */
+#sr-recruiting-finder .sr-options button[aria-pressed="true"] {
+  background: #63656a;
+  box-shadow: inset 0 0 0 3px #dd7c3b;
+}
+
+#sr-recruiting-finder .sr-options button[aria-pressed="true"]::before {
+  content: "\2713\00a0";
+}
+
+#sr-recruiting-finder .sr-primary-btn:disabled {
+  background: #dd7c3b;
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 
 
 /* PROGRESS */
@@ -464,7 +484,7 @@
   const root = document.getElementById('sr-recruiting-finder');
   if (!root) return;
 
-  const answers = { role: null, goal: null, challenge: null };
+  const answers = { role: null, goal: null, challenge: [] };
 
   const roles = {
     A: { label: 'HR / People Leader', opening: "As an HR/People leader, you're accountable for a recruiting strategy that keeps up with the pace of business, and for how the move to SmartRecruiters affects your people, processes and long-term roadmap." },
@@ -560,7 +580,7 @@
     E: 'You told us internal resources are limited. Major technology transitions place significant demands on HR, Talent Acquisition, IT and change management teams, and organizations that delay often face resource shortages and compressed timelines. Starting early lets you plan the work around your team, not the other way around.',
     F: "You told us you're unsure about SAP's timeline. Many organizations assume they can wait for SAP to publish final timelines, but history suggests otherwise. Because SAP allows SAP SuccessFactors Recruiting to run alongside SmartRecruiters, you can plan a phased move on your own terms.",
     G: 'You told us your recruiting data and integrations are complex. Reporting dependencies, data governance models and security and compliance requirements all take time to map. Evaluating them now reduces implementation risk and avoids costly redesign efforts later.',
-    H: 'You told us building the business case is your biggest hurdle. Organizations that treat this as a business transformation, rather than a software migration, consistently achieve better outcomes: faster hiring, higher application-to-hire rates and more openings filled on time. Our executive guide is designed to help you make that case.'
+    H: 'You told us building the business case is a major hurdle. Organizations that treat this as a business transformation, rather than a software migration, consistently achieve better outcomes: faster hiring, higher application-to-hire rates and more openings filled on time. Our executive guide is designed to help you make that case.'
   };
 
   const $ = (id) => document.getElementById(id);
@@ -568,6 +588,7 @@
   const progress = $('sr-progress-wrapper');
   const questions = $('sr-questions');
   const result = $('sr-result');
+  const submit = root.querySelector('[data-sr-submit]');
   const total = 3;
 
   // Optional analytics: pushes to Google Tag Manager when it is present on the page.
@@ -628,7 +649,11 @@
     $('sr-role-opening').textContent = roles[answers.role].opening;
     $('sr-result-title').textContent = goal.title;
     $('sr-goal-copy').textContent = goal.copy;
-    $('sr-challenge-copy').textContent = challenges[answers.challenge];
+    $('sr-challenge-copy').replaceChildren(...answers.challenge.map((key) => {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = challenges[key];
+      return paragraph;
+    }));
     $('sr-features').replaceChildren(...goal.features.map((key) => featureCard(features[key])));
     $('sr-primary-cta').textContent = goal.cta;
 
@@ -638,20 +663,31 @@
     emit('sr_finder_completed', {
       sr_role: answers.role,
       sr_goal: answers.goal,
-      sr_challenge: answers.challenge,
+      sr_challenge: answers.challenge.join(','),
       sr_result: goal.title
     });
   }
 
-  function answer(type, value) {
+  // Question 3 is multi-select: each click toggles a challenge, and the submit button shows the result.
+  function toggleChallenge(button, value) {
+    const selected = button.getAttribute('aria-pressed') !== 'true';
+    button.setAttribute('aria-pressed', String(selected));
+    answers.challenge = selected ? [...answers.challenge, value].sort() : answers.challenge.filter((key) => key !== value);
+    submit.disabled = !answers.challenge.length;
+  }
+
+  function answer(type, value, button) {
+    if (type === 'challenge') return toggleChallenge(button, value);
     answers[type] = value;
     if (type === 'role') showQuestion(2);
     else if (type === 'goal') showQuestion(3);
-    else if (type === 'challenge') showResult();
   }
 
   function restart() {
-    answers.role = answers.goal = answers.challenge = null;
+    answers.role = answers.goal = null;
+    answers.challenge = [];
+    root.querySelectorAll('[aria-pressed]').forEach((button) => button.setAttribute('aria-pressed', 'false'));
+    submit.disabled = true;
     result.hidden = true;
     progress.hidden = true;
     questions.hidden = true;
@@ -664,9 +700,10 @@
     if (!target) return;
     if (target.matches('[data-sr-start]')) start();
     else if (target.matches('[data-sr-restart]')) restart();
+    else if (target.matches('[data-sr-submit]')) showResult();
     else if (target.dataset.srAnswer) {
       const [type, value] = target.dataset.srAnswer.split(':');
-      answer(type, value);
+      answer(type, value, target);
     }
   });
 })();

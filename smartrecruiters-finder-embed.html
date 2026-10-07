@@ -1,7 +1,238 @@
+<!-- ============================================================
+     SMARTRECRUITERS RECRUITING PRIORITIES FINDER (EMBED)
+     HRIZONS / SmartRecruiters
+
+     Paste this whole block where the questionnaire should appear,
+     e.g. between two <section> elements of a campaign microsite,
+     or into an HTML / Custom HTML block. It is self-contained:
+       - Uses HRIZONS tokens (tokens.css) when the page has them,
+         with built-in fallbacks otherwise.
+       - Analytics: campaign:track on HRIZONS microsites,
+         otherwise GTM dataLayer if present.
+       - "Book an assessment" links to #assessment when the page
+         has that section, otherwise to hrizons.com.
+     ============================================================ -->
+
+<section class="finder" id="recruiting-finder" aria-labelledby="sr-intro-title">
+  <div id="sr-recruiting-finder">
+    <div class="sr-container">
+
+      <div class="sr-intro" id="sr-intro">
+        <div class="sr-eyebrow">SmartRecruiters Recruiting Priorities Finder</div>
+        <h2 id="sr-intro-title" tabindex="-1">What Should Your Recruiting Technology Deliver?</h2>
+        <p class="sr-intro-lead">Where should your SmartRecruiters journey begin?</p>
+        <p>Answer three quick questions and we&rsquo;ll instantly show you the SmartRecruiters capabilities that match your recruiting priorities, and how they compare with SAP&reg; SuccessFactors&reg; Recruiting today.</p>
+        <button type="button" class="sr-primary-btn" data-sr-start data-cta-name="finder-start">Find My Recruiting Priorities &rarr;</button>
+      </div>
+
+      <div class="sr-progress-wrapper" id="sr-progress-wrapper" hidden>
+        <div class="sr-progress-text"><span id="sr-progress-label" aria-live="polite">Question 1 of 3</span></div>
+        <div class="sr-progress" aria-hidden="true"><div id="sr-progress-bar"></div></div>
+      </div>
+
+      <div id="sr-questions" hidden>
+        <div class="sr-question" id="sr-question-1" data-sr-question="1">
+          <div class="sr-question-number">01</div>
+          <h3 tabindex="-1">What is your role?</h3>
+          <p class="sr-question-subtitle">This helps us tailor the results to your perspective.</p>
+          <div class="sr-options">
+            <button type="button" data-sr-answer="role:A">HR / People Leader</button>
+            <button type="button" data-sr-answer="role:B">Talent Acquisition / Recruiting</button>
+            <button type="button" data-sr-answer="role:C">Hiring Manager / Business Leader</button>
+            <button type="button" data-sr-answer="role:D">HR Technology / HRIS / IT</button>
+            <button type="button" data-sr-answer="role:E">HR Operations / Change Management</button>
+            <button type="button" data-sr-answer="role:F">Executive Sponsor (CHRO, CIO, CFO)</button>
+            <button type="button" data-sr-answer="role:G">Other</button>
+          </div>
+        </div>
+
+        <div class="sr-question" id="sr-question-2" data-sr-question="2" hidden>
+          <div class="sr-question-number">02</div>
+          <h3 tabindex="-1">What do you most require from your recruiting technology?</h3>
+          <p class="sr-question-subtitle">Choose the outcome that matters most to you.</p>
+          <div class="sr-options">
+            <button type="button" data-sr-answer="goal:A">Improve recruiter productivity</button>
+            <button type="button" data-sr-answer="goal:B">Reduce time-to-fill</button>
+            <button type="button" data-sr-answer="goal:C">Increase candidate engagement</button>
+            <button type="button" data-sr-answer="goal:D">Improve hiring manager participation</button>
+            <button type="button" data-sr-answer="goal:E">Flexible workflows for every type of hire</button>
+            <button type="button" data-sr-answer="goal:F">Prepare our recruiting for AI</button>
+            <button type="button" data-sr-answer="goal:G">Integrate recruiting with SAP SuccessFactors</button>
+            <button type="button" data-sr-answer="goal:H">I&rsquo;m not sure where our biggest opportunity is</button>
+          </div>
+        </div>
+
+        <div class="sr-question" id="sr-question-3" data-sr-question="3" hidden>
+          <div class="sr-question-number">03</div>
+          <h3 tabindex="-1">What are the biggest challenges your recruiting team faces?</h3>
+          <p class="sr-question-subtitle">Select all that apply, then see your results.</p>
+          <div class="sr-options">
+            <button type="button" aria-pressed="false" data-sr-answer="challenge:A">Recruiters rely on workarounds and manual admin</button>
+            <button type="button" aria-pressed="false" data-sr-answer="challenge:B">Hiring managers fall back on email and spreadsheets</button>
+            <button type="button" aria-pressed="false" data-sr-answer="challenge:C">Candidates drop off or get inconsistent communication</button>
+            <button type="button" aria-pressed="false" data-sr-answer="challenge:D">Hiring simply takes too long</button>
+            <button type="button" aria-pressed="false" data-sr-answer="challenge:E">We have limited internal resources for a major transition</button>
+            <button type="button" aria-pressed="false" data-sr-answer="challenge:F">We&rsquo;re unsure about SAP&rsquo;s timeline and what it means for us</button>
+            <button type="button" aria-pressed="false" data-sr-answer="challenge:G">Our recruiting data and integrations are complex</button>
+            <button type="button" aria-pressed="false" data-sr-answer="challenge:H">Building the business case and executive buy-in</button>
+          </div>
+          <button type="button" class="sr-primary-btn" data-sr-submit disabled>See My Results &rarr;</button>
+        </div>
+      </div>
+
+      <div id="sr-result" hidden>
+        <div class="sr-result-header">
+          <div class="sr-eyebrow">Your personalized SmartRecruiters result</div>
+          <h2 id="sr-result-title" tabindex="-1"></h2>
+        </div>
+        <div class="sr-result-content">
+          <div class="sr-result-intro" id="sr-role-opening"></div>
+          <h3>Your opportunity</h3>
+          <p id="sr-goal-copy"></p>
+          <div class="sr-goal-box">
+            <strong>Based on your responses...</strong>
+            <div id="sr-challenge-copy"></div>
+          </div>
+          <h3>SmartRecruiters capabilities that can help</h3>
+          <div id="sr-features"></div>
+
+          <div class="sr-next-step">
+            <h3>Your next step</h3>
+            <p>The most successful organizations won&rsquo;t wait for a mandate. Get the full feature-by-feature comparison and our recommendations for building your SmartRecruiters roadmap.</p>
+            <a id="sr-primary-cta" href="https://hrizons.com/wp-content/uploads/2026/08/SmartRecruiters__Exec_Summary_w_Matrix_260814.pdf" class="sr-secondary-btn" target="_blank" rel="noopener" data-cta-name="finder-result-download" data-resource-name="smartrecruiters-executive-guide">Download the SmartRecruiters Executive Guide</a>
+            <a href="#assessment" class="sr-link-btn" data-cta-name="finder-result-book">Or book a SmartRecruiters readiness assessment</a>
+          </div>
+
+          <button type="button" class="sr-restart" data-sr-restart>&larr; Start Over</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* HRIZONS design tokens are used when the page defines them (tokens.css);
+   otherwise the fallback values after each comma apply. */
+
+#recruiting-finder { margin-top: 96px; padding: 88px 0; background: var(--hrz-bone, #F7F5F2); }
+
+#recruiting-finder, #recruiting-finder * { box-sizing: border-box; }
+#sr-recruiting-finder { max-width: 948px; margin: 0 auto; padding: 0 16px; font-family: var(--hrz-font-body, Carlito, Calibri, "Helvetica Neue", Arial, sans-serif); font-size: 16px; line-height: 1.6; color: var(--hrz-graphite, #2A2A2A); scroll-margin-top: 88px; }
+#sr-recruiting-finder [hidden] { display: none !important; }
+
+.sr-container {
+  padding: 48px;
+  border-radius: 16px;
+  background: var(--hrz-paper, #FFFFFF);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, .25);
+}
+#sr-recruiting-finder h2, #sr-recruiting-finder h3 { color: var(--hrz-ink, #111111); font-family: var(--hrz-font-display, Carlito, Calibri, "Helvetica Neue", Arial, sans-serif); }
+#sr-recruiting-finder h2:focus, #sr-recruiting-finder h3:focus { outline: none; }
+
+/* Intro */
+.sr-intro { max-width: 700px; margin: 0 auto; text-align: center; }
+.sr-eyebrow {
+  margin-bottom: 14px;
+  color: var(--hrz-orange, #E86D1F);
+  font: var(--hrz-w-bold, 700) 13px/1.3 var(--hrz-font-display, Carlito, Calibri, "Helvetica Neue", Arial, sans-serif);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.sr-intro h2 { margin: 0 0 14px; font-size: 42px; line-height: 1.1; }
+.sr-intro-lead { margin: 0 0 15px; color: var(--hrz-ink, #111111); font: italic 24px/1.4 var(--hrz-font-italic, "Source Serif 4", Georgia, serif); }
+.sr-intro p { font-size: 17px; line-height: 1.65; }
+
+/* Buttons: one treatment shared by start, answers, result CTA, and restart */
+#sr-recruiting-finder .sr-primary-btn,
+#sr-recruiting-finder .sr-options button,
+#sr-recruiting-finder .sr-secondary-btn,
+#sr-recruiting-finder .sr-restart {
+  display: inline-block;
+  padding: 15px 24px;
+  border: 0;
+  border-radius: var(--hrz-radius-sm, 4px);
+  background: var(--hrz-orange, #E86D1F);
+  color: var(--hrz-paper, #FFFFFF);
+  font: var(--hrz-w-bold, 700) 16px/1.4 var(--hrz-font-display, Carlito, Calibri, "Helvetica Neue", Arial, sans-serif);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--hrz-dur-fast, 150ms) var(--hrz-ease-out, cubic-bezier(.2, .7, .2, 1)), transform var(--hrz-dur-fast, 150ms) var(--hrz-ease-out, cubic-bezier(.2, .7, .2, 1)), box-shadow var(--hrz-dur-fast, 150ms) var(--hrz-ease-out, cubic-bezier(.2, .7, .2, 1));
+}
+#sr-recruiting-finder .sr-primary-btn:hover,
+#sr-recruiting-finder .sr-options button:hover,
+#sr-recruiting-finder .sr-secondary-btn:hover,
+#sr-recruiting-finder .sr-restart:hover {
+  background: var(--hrz-slate, #4F5762);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(15, 27, 45, .2);
+}
+#sr-recruiting-finder button:focus-visible,
+#sr-recruiting-finder a:focus-visible { outline: 3px solid var(--hrz-orange-glow, #F2A571); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  #sr-recruiting-finder * { transition: none !important; transform: none !important; }
+}
+
+#sr-recruiting-finder .sr-primary-btn { margin-top: 20px; }
+#sr-recruiting-finder .sr-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+#sr-recruiting-finder .sr-options button { width: 100%; min-height: 58px; margin: 0; }
+#sr-recruiting-finder .sr-secondary-btn { display: block; width: 100%; margin-top: 18px; }
+#sr-recruiting-finder .sr-restart { display: block; margin: 28px auto 0; background: var(--hrz-ink, #111111); }
+/* Question 3 is multi-select: selected answers stay highlighted until the visitor continues */
+#sr-recruiting-finder .sr-options button[aria-pressed="true"] { background: var(--hrz-slate, #4F5762); box-shadow: inset 0 0 0 3px var(--hrz-orange, #E86D1F); }
+#sr-recruiting-finder .sr-options button[aria-pressed="true"]::before { content: "\2713\00a0"; }
+#sr-recruiting-finder .sr-primary-btn:disabled { background: var(--hrz-orange, #E86D1F); opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+.sr-link-btn { display: inline-block; margin-top: 14px; color: var(--hrz-orange-deep, #C25612); font-weight: var(--hrz-w-bold, 700); }
+
+/* Progress */
+.sr-progress-wrapper { margin-bottom: 40px; }
+.sr-progress-text { margin-bottom: 8px; color: var(--hrz-slate, #4F5762); font-size: 13px; font-weight: var(--hrz-w-bold, 700); text-align: right; }
+.sr-progress { height: 6px; overflow: hidden; border-radius: 5px; background: var(--hrz-mist, #E5E7EB); }
+#sr-progress-bar { width: 33.33%; height: 100%; background: var(--hrz-orange, #E86D1F); transition: width .35s ease; }
+
+/* Questions */
+.sr-question { max-width: 720px; margin: 0 auto; }
+.sr-question-number { margin-bottom: 8px; color: var(--hrz-orange, #E86D1F); font-size: 14px; font-weight: var(--hrz-w-bold, 700); }
+.sr-question h3 { margin: 0 0 10px; font-size: 30px; line-height: 1.25; }
+.sr-question-subtitle { margin-bottom: 25px; color: var(--hrz-slate, #4F5762); }
+
+/* Result */
+.sr-result-header { padding-bottom: 25px; border-bottom: var(--hrz-border, 1px solid #E5E7EB); text-align: center; }
+.sr-result-header h2 { margin: 0; font-size: 36px; line-height: 1.2; }
+.sr-result-content { max-width: 720px; margin: 35px auto 0; }
+.sr-result-intro { margin-bottom: 25px; color: var(--hrz-ink, #111111); font-size: 18px; font-weight: var(--hrz-w-bold, 700); line-height: 1.6; }
+.sr-result-content h3 { margin: 30px 0 12px; font-size: 22px; }
+.sr-result-content p { font-size: 16px; line-height: 1.65; }
+.sr-goal-box { margin: 28px 0; padding: 22px; border-left: 4px solid var(--hrz-orange, #E86D1F); border-radius: var(--hrz-radius-md, 8px); background: var(--hrz-cream, #FEF0E6); }
+.sr-goal-box strong { color: var(--hrz-ink, #111111); font-size: 17px; }
+.sr-goal-box p { margin: 8px 0 0; }
+.sr-feature { margin-bottom: 12px; padding: 18px 20px; border: var(--hrz-border, 1px solid #E5E7EB); border-radius: var(--hrz-radius-md, 8px); }
+.sr-feature-title { margin-bottom: 5px; color: var(--hrz-ink, #111111); font-weight: var(--hrz-w-bold, 700); }
+.sr-feature-description { margin: 0 !important; color: var(--hrz-slate, #4F5762); }
+.sr-feature-compare { margin: 10px 0 0 !important; padding-top: 10px; border-top: 1px dashed var(--hrz-mist, #E5E7EB); color: var(--hrz-slate, #4F5762); font-size: 14px !important; line-height: 1.5 !important; }
+.sr-feature-compare span { color: var(--hrz-orange-deep, #C25612); font-weight: var(--hrz-w-bold, 700); }
+.sr-next-step { margin-top: 35px; padding: 30px; border-radius: 12px; background: var(--hrz-bone, #F7F5F2); text-align: center; }
+.sr-next-step h3 { margin-top: 0 !important; }
+
+
+@media (max-width: 650px) {
+  #recruiting-finder { padding: 48px 0; }
+  #sr-recruiting-finder { scroll-margin-top: 136px; }
+  .sr-container { padding: 28px 20px; }
+  .sr-intro h2 { font-size: 32px; }
+  .sr-intro-lead { font-size: 20px; }
+  #sr-recruiting-finder .sr-options { grid-template-columns: 1fr; }
+  .sr-question h3 { font-size: 25px; }
+  .sr-result-header h2 { font-size: 29px; }
+}
+</style>
+
+<script>
 // SmartRecruiters Recruiting Priorities Finder: three questions, then an immediate personalized result.
 // Layout follows the JDMS Challenge Finder template. Copy, statistics, and feature comparisons come from
 // the HRIZONS Solution Guide "Building the Business Case for SmartRecruiters" (Exec Summary w/ Matrix, 260814).
-// Analytics goes through the platform's campaign:track event; only answer codes are reported.
+// Only answer codes are reported to analytics, never personal data.
 (() => {
   const root = document.getElementById('sr-recruiting-finder');
   if (!root) return;
@@ -113,8 +344,21 @@
   const submit = root.querySelector('[data-sr-submit]');
   const total = 3;
 
+  // On HRIZONS campaign microsites, analytics.js handles campaign:track (adding campaign_id and
+  // respecting consent). Elsewhere, push straight to Google Tag Manager's dataLayer if present.
+  const onCampaignPlatform = () => Array.isArray(window.dataLayer) && window.dataLayer.some((entry) => entry && entry.campaign_id);
   const emit = (eventName, parameters = {}) => {
-    document.dispatchEvent(new CustomEvent('campaign:track', { detail: { eventName, parameters } }));
+    if (onCampaignPlatform()) document.dispatchEvent(new CustomEvent('campaign:track', { detail: { eventName, parameters } }));
+    else if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: eventName, ...parameters });
+  };
+
+  // The booking link targets the page's #assessment section; fall back to the HRIZONS site without one.
+  // Checked when the result is shown, because the section may sit below this embed in the page.
+  const bookLink = root.querySelector('[data-cta-name="finder-result-book"]');
+  const updateBookLink = () => {
+    if (!bookLink || document.getElementById('assessment')) return;
+    bookLink.href = 'https://hrizons.com/hrizons-smartrecruiters-transition/';
+    bookLink.textContent = 'Or talk to HRIZONS about a readiness assessment';
   };
 
   // Keep the finder in view (clear of the sticky header) and move focus for screen-reader users.
@@ -177,6 +421,7 @@
     }));
     $('sr-features').replaceChildren(...goal.features.map((key) => featureCard(features[key])));
     $('sr-primary-cta').textContent = goal.cta;
+    updateBookLink();
 
     result.hidden = false;
     focusHeading(result);
@@ -228,3 +473,5 @@
     }
   });
 })();
+</script>
+<!-- END SMARTRECRUITERS RECRUITING PRIORITIES FINDER -->

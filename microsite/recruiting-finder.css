@@ -64,6 +64,10 @@
 #sr-recruiting-finder .sr-options button { width: 100%; min-height: 58px; margin: 0; }
 #sr-recruiting-finder .sr-secondary-btn { display: block; width: 100%; margin-top: 18px; }
 #sr-recruiting-finder .sr-restart { display: block; margin: 28px auto 0; background: var(--hrz-ink); }
+/* Question 3 is multi-select: selected answers stay highlighted until the visitor continues */
+#sr-recruiting-finder .sr-options button[aria-pressed="true"] { background: var(--hrz-slate); box-shadow: inset 0 0 0 3px var(--hrz-orange); }
+#sr-recruiting-finder .sr-options button[aria-pressed="true"]::before { content: "\2713\00a0"; }
+#sr-recruiting-finder .sr-primary-btn:disabled { background: var(--hrz-orange); opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
 .sr-link-btn { display: inline-block; margin-top: 14px; color: var(--hrz-orange-deep); font-weight: var(--hrz-w-bold); }
 
 /* Progress */

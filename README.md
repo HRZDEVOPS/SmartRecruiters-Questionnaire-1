@@ -12,17 +12,18 @@ Solution Guide *Building the Business Case for SmartRecruiters*
 
 ## How it works
 
-1. **Role:** HR/People Leader, Talent Acquisition, Hiring Manager, HR
+1. **What is your role?** HR/People Leader, Talent Acquisition, Hiring Manager, HR
    Technology/HRIS/IT, HR Operations/Change Management, Executive Sponsor, Other.
-2. **What the recruiting technology should provide:** recruiter productivity,
+2. **What do you most require from your recruiting technology?** Recruiter productivity,
    time-to-fill, candidate engagement, hiring manager participation, flexible
    workflows, AI readiness, SAP SuccessFactors integration, or not sure.
-3. **Biggest recruiting challenge:** workarounds, hiring manager adoption,
+3. **What are the biggest challenges your recruiting team faces?** Visitors can
+   select more than one, then click **See My Results**. Options: workarounds, hiring manager adoption,
    candidate drop-off, slow hiring, limited resources, SAP timeline uncertainty,
    complex data and integrations, or the business case.
 
 The result combines a role-specific opening, the opportunity for the chosen
-priority, guidance for the chosen challenge, four SmartRecruiters capabilities
+priority, guidance for each chosen challenge, four SmartRecruiters capabilities
 (each with the guide's SAP SuccessFactors Recruiting comparison where one
 exists), and calls to action for the executive guide and a readiness assessment.
 
@@ -32,6 +33,9 @@ exists), and calls to action for the executive guide and a readiness assessment.
   it on any page (for example a WordPress Custom HTML block), copy everything
   between the `BEGIN EMBED` and `END EMBED` comments. Styles are self-contained
   and scoped to `#sr-recruiting-finder`.
+- `smartrecruiters-finder-embed.html` — a single paste-in block for any page,
+  such as a campaign microsite or a Custom HTML block. It uses the HRIZONS
+  design tokens when the page has them and built-in fallbacks otherwise.
 - `microsite/` — the version used on the SmartRecruiters Business Case microsite
   (`HRZDEVOPS/SmartRecruitersLandingPage`), styled with the HRIZONS design
   tokens (`tokens.css`):
@@ -50,7 +54,7 @@ match a key in the script. When you change content, update both `index.html` and
 ## Analytics
 
 On completion the finder reports `sr_finder_completed` with `sr_role`,
-`sr_goal`, `sr_challenge`, and `sr_result`. Only answer codes are sent, never
+`sr_goal`, `sr_challenge` (comma-separated when several are chosen, e.g. `A,D`), and `sr_result`. Only answer codes are sent, never
 personal data. `finder_started` fires when a visitor begins.
 
 - Standalone: pushes to `window.dataLayer` when Google Tag Manager is on the page.

@@ -19,7 +19,7 @@
         <div id="sr-questions" hidden>
           <div class="sr-question" id="sr-question-1" data-sr-question="1">
             <div class="sr-question-number">01</div>
-            <h3 tabindex="-1">What best describes your role?</h3>
+            <h3 tabindex="-1">What is your role?</h3>
             <p class="sr-question-subtitle">This helps us tailor the results to your perspective.</p>
             <div class="sr-options">
               <button type="button" data-sr-answer="role:A">HR / People Leader</button>
@@ -34,7 +34,7 @@
 
           <div class="sr-question" id="sr-question-2" data-sr-question="2" hidden>
             <div class="sr-question-number">02</div>
-            <h3 tabindex="-1">What do you most want your recruiting technology solution to provide?</h3>
+            <h3 tabindex="-1">What do you most require from your recruiting technology?</h3>
             <p class="sr-question-subtitle">Choose the outcome that matters most to you.</p>
             <div class="sr-options">
               <button type="button" data-sr-answer="goal:A">Improve recruiter productivity</button>
@@ -50,18 +50,19 @@
 
           <div class="sr-question" id="sr-question-3" data-sr-question="3" hidden>
             <div class="sr-question-number">03</div>
-            <h3 tabindex="-1">What&rsquo;s your biggest recruiting challenge today?</h3>
-            <p class="sr-question-subtitle">Tell us what&rsquo;s getting in the way.</p>
+            <h3 tabindex="-1">What are the biggest challenges your recruiting team faces?</h3>
+            <p class="sr-question-subtitle">Select all that apply, then see your results.</p>
             <div class="sr-options">
-              <button type="button" data-sr-answer="challenge:A">Recruiters rely on workarounds and manual admin</button>
-              <button type="button" data-sr-answer="challenge:B">Hiring managers fall back on email and spreadsheets</button>
-              <button type="button" data-sr-answer="challenge:C">Candidates drop off or get inconsistent communication</button>
-              <button type="button" data-sr-answer="challenge:D">Hiring simply takes too long</button>
-              <button type="button" data-sr-answer="challenge:E">We have limited internal resources for a major transition</button>
-              <button type="button" data-sr-answer="challenge:F">We&rsquo;re unsure about SAP&rsquo;s timeline and what it means for us</button>
-              <button type="button" data-sr-answer="challenge:G">Our recruiting data and integrations are complex</button>
-              <button type="button" data-sr-answer="challenge:H">Building the business case and executive buy-in</button>
+              <button type="button" aria-pressed="false" data-sr-answer="challenge:A">Recruiters rely on workarounds and manual admin</button>
+              <button type="button" aria-pressed="false" data-sr-answer="challenge:B">Hiring managers fall back on email and spreadsheets</button>
+              <button type="button" aria-pressed="false" data-sr-answer="challenge:C">Candidates drop off or get inconsistent communication</button>
+              <button type="button" aria-pressed="false" data-sr-answer="challenge:D">Hiring simply takes too long</button>
+              <button type="button" aria-pressed="false" data-sr-answer="challenge:E">We have limited internal resources for a major transition</button>
+              <button type="button" aria-pressed="false" data-sr-answer="challenge:F">We&rsquo;re unsure about SAP&rsquo;s timeline and what it means for us</button>
+              <button type="button" aria-pressed="false" data-sr-answer="challenge:G">Our recruiting data and integrations are complex</button>
+              <button type="button" aria-pressed="false" data-sr-answer="challenge:H">Building the business case and executive buy-in</button>
             </div>
+            <button type="button" class="sr-primary-btn" data-sr-submit disabled>See My Results &rarr;</button>
           </div>
         </div>
 
@@ -76,7 +77,7 @@
             <p id="sr-goal-copy"></p>
             <div class="sr-goal-box">
               <strong>Based on your responses...</strong>
-              <p id="sr-challenge-copy"></p>
+              <div id="sr-challenge-copy"></div>
             </div>
             <h3>SmartRecruiters capabilities that can help</h3>
             <div id="sr-features"></div>
